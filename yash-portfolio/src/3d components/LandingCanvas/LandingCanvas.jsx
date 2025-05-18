@@ -18,7 +18,7 @@ const LandingCanvas = () => {
         {/* Stronger directional light */}
         <pointLight position={[0, 10, 0]} intensity={1.5} />{" "}
         {/* Light from above */}
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         {/* <axesHelper args={[5]} /> */}
         <Suspense>
           <PorscheModel />
