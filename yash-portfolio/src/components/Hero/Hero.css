@@ -1,13 +1,90 @@
 .main-hero {
     display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+    padding: 150px;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+.hero-title p {
+    font-size: 30px;
+}
+
+.hero-title h1 {
+    font-family: "Shadows Into Light", cursive;
+    font-size: 100px;
+    transition: 0.5s;
+    width: fit-content;
+}
+
+.hero-action {
+    display: flex;
+    align-items: start;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hero-action p {
+    display: flex;
     align-items: center;
-    position: absolute;
+    justify-content: center;
+    gap: 5px;
+}
+
+.hero-action p a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F4D58D;
+}
+
+.hero-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.hero-btns button {
+    background: #EE2A28;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+    color: white;
+    margin: 10px 5px;
+}
+
+.hero-btns button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background: white;
+    color: #EE2A28;
+}
+
+.hero-btns button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+.cursor {
+    background-color: #EE2A28;
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+    position: fixed;
     top: 0;
     left: 0;
-    color: white;
-    font-size: 3rem;
-    z-index: 10;
     pointer-events: none;
-    /* Optional: allows 3D canvas interaction through this */
 }
