@@ -1,0 +1,12 @@
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin: 20px;
+    font-size: 50px;
+    cursor: pointer;
+}

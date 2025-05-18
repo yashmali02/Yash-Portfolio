@@ -1,0 +1,13 @@
+.main-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 3rem;
+    z-index: 10;
+    pointer-events: none;
+    /* Optional: allows 3D canvas interaction through this */
+}

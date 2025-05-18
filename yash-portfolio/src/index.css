@@ -1,8 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sacramento&family=Satisfy&family=Shadows+Into+Light&family=Silkscreen:wght@400;700&display=swap');
 
+:root {
+  /* colors */
+  --background-color: #001427;
+  --primary-color: #F4D58D;
+  --secondary-color: #708D81;
+  --tertiary-color: #BF0603;
+  --highlight-color: #8D0801
+    /* fonts */
+    --head-font: "Satisfy", cursive;
+}
+
+/* screen sizes: '
+  desktop=1920, 
+  mobile=360, 
+  tablet=786 */
+
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
   font-family: "Silkscreen", sans-serif;
+}
+
+html {
+  background-color: black;
+  color: var(--primary-color);
+}
+
+
+/* removed scrollbar` */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
