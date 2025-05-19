@@ -1,0 +1,174 @@
+.main-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.canvas-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.canvas-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.canvas-content p {
+    font-size: 40px;
+}
+
+.about-cmd {
+    /* border: 1px solid red; */
+    width: 700px;
+    margin: 20px;
+    background-color: #474746;
+    border-radius: 15px;
+}
+
+.about-cmd-header {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 10px;
+    background-color: #292828;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.red {
+    width: 15px;
+    height: 15px;
+    background-color: #FF605C;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.yellow {
+    width: 15px;
+    height: 15px;
+    background-color: #FFBD44;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.green {
+    width: 15px;
+    height: 15px;
+    background-color: #00CA4E;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.about-cmd-body {
+    padding: 20px;
+    outline: none;
+    height: 400px;
+    font-family: 'Consolas', Courier, monospace;
+}
+
+.about-cmd-body div {
+    font-family: 'Consolas', Courier, monospace;
+
+}
+
+.about-cmd-body p {
+    font-size: 20px;
+    font-family: 'Consolas', Courier, monospace;
+}
+
+.about-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+.about-github-btn {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.about-github-btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.about-linkedIn-btn {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5pz;
+    height: 40px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.about-linkedIn-btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.terminal-line::before {
+    content: "|";
+    color: #F4D58D;
+    margin-right: 8px;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .canvas-content p {
+        font-size: 20px;
+    }
+
+    .canvas-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 360px;
+        padding: 10px;
+    }
+
+    .about-cmd {
+        width: 300px;
+        margin: 20px;
+        background-color: #474746;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+}
