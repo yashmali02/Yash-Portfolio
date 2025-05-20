@@ -69,15 +69,41 @@
 }
 
 .about-cmd-body {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
     padding: 20px;
     outline: none;
     height: 400px;
     font-family: 'Consolas', Courier, monospace;
 }
 
+.cmd-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    background-color: #474746;
+    outline: none;
+    width: 100%;
+    border: none;
+    font-family: 'Consolas', Courier, monospace;
+    font-size: 16px;
+    color: #F4D58D;
+}
+
+.about-cmd-body-panel {
+    display: flex;
+}
+
+.cmd-render {
+    margin: 3px 0;
+    white-space: pre-wrap;
+}
+
 .about-cmd-body div {
     font-family: 'Consolas', Courier, monospace;
-
 }
 
 .about-cmd-body p {
@@ -169,6 +195,4 @@
     }
 }
 
-@media screen and (max-width: 768px){
-    
-}
+@media screen and (max-width: 768px) {}

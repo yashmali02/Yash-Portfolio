@@ -1,48 +1,59 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./AboutMe.css";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import { useCMDContext } from "../../context/CMDContext";
+
 const AboutMe = () => {
+  const { command, setCommand, setOutput, output, handleCommand } =
+    useCMDContext();
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+        setCommand("");
+        setOutput("");
+        inputRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keyDown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [setCommand, setOutput]);
+
   return (
     <div className="main-about">
       <div className="canvas-about">{/* Canvas here */}</div>
       <div className="canvas-content">
         <p>console.log(yash)</p>
-        <div className="about-cmd">
+        <div className="about-cmd" onClick={() => inputRef.current?.focus()}>
           <div className="about-cmd-header">
             <span className="red"></span>
             <span className="yellow"></span>
             <span className="green"></span>
           </div>
-          {/* <div className="about-cmd-body">
-            <p>yash@admin&gt; npm install yash</p>
-            <p>
-              &gt;&gt; Module loaded: Visionary.Dev{" "}
-              <span className="terminal-line" />
-            </p>
-            <br />
-            <p>yash@admin&gt; npm install react</p>
-            <p>
-              &gt;&gt; Framework injected: Pixel Perfection{" "}
-              <span className="terminal-line" />
-            </p>
-            <br />
-
-            <p>yash@admin&gt; npm install three</p>
-            <p>
-              &gt;&gt; Reality upgraded: 3D Immersion v1.0{" "}
-              <span className="terminal-line" />
-            </p>
-            <br />
-
-            <p>yash@admin&gt; npm install porsche</p>
-            <p>
-              &gt;&gt; This guy loves 911 GT3 RS{" "}
-              <span className="terminal-line" />
-            </p>
-          </div> */}
-          <div className="about-cmd-body" contentEditable />
+          <div className="about-cmd-body">
+            <div className="about-cmd-body-panel">
+              <div>yash@admin&gt;</div>
+              <input
+                ref={inputRef}
+                type="text"
+                className="cmd-input"
+                value={command}
+                onChange={(e) => setCommand(e.target.value)}
+                onKeyDown={handleCommand}
+                autoFocus
+              />
+            </div>
+            <div className="cmd-render">
+              {output.split("\n").map((line, index) => (
+                <div key={index}>{line}</div>
+              ))}
+            </div>
+          </div>
         </div>
         <div className="about-btns">
           <button

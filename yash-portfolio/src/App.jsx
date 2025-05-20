@@ -5,14 +5,18 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMe from "./pages/AboutMe/AboutMe";
 
+import { CMDProvider } from "./context/CMDContext";
+
 const App = () => {
   return (
-    <div className="main-app">
-      <Header />
-      <Navbar />
-      {/* <LandingPage /> */}
-      <AboutMe />
-    </div>
+    <CMDProvider>
+      <div className="main-app">
+        <Header />
+        <Navbar />
+        {/* <LandingPage /> */}
+        <AboutMe />
+      </div>
+    </CMDProvider>
   );
 };
 
