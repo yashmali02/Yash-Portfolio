@@ -11,8 +11,8 @@ export const CMDProvider = ({ children }) => {
     if (e.key !== "Enter") return;
 
     const input = command.toLowerCase().trim();
-    setCommand(""); // reset input
-    setOutput(""); // reset output
+    setCommand("");
+    setOutput("");
 
     const messageMap = {
       cls: [],

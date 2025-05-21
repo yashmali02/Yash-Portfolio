@@ -167,15 +167,20 @@
     animation: blink 1s step-start infinite;
 }
 
+.about-icons {
+    margin: 20px 0;
+}
+
 @keyframes blink {
     50% {
         opacity: 0;
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 460px) {
     .canvas-content p {
         font-size: 20px;
+        margin-top: 10px;
     }
 
     .canvas-content {
@@ -183,12 +188,12 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        width: 360px;
+        width: 400px;
         padding: 10px;
     }
 
     .about-cmd {
-        width: 300px;
+        width: 380px;
         margin: 20px;
         background-color: #474746;
         border-radius: 15px;

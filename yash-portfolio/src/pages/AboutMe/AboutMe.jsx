@@ -4,6 +4,7 @@ import "./AboutMe.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { useCMDContext } from "../../context/CMDContext";
+import LogoSlider from "../../components/LogoSlider/LogoSlider";
 
 const AboutMe = () => {
   const { command, setCommand, setOutput, output, handleCommand } =
@@ -75,8 +76,11 @@ const AboutMe = () => {
             }
           >
             <FaLinkedin />
-            &nbsp;LinkedIN
+            &nbsp;LinkedIN 
           </button>
+        </div>
+        <div className="about-icons">
+          <LogoSlider/>
         </div>
       </div>
     </div>
