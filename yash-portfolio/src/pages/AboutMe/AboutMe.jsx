@@ -1,15 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "./AboutMe.css";
-
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
 import { useCMDContext } from "../../context/CMDContext";
 import LogoSlider from "../../components/LogoSlider/LogoSlider";
 
 const AboutMe = () => {
-  const { command, setCommand, setOutput, output, handleCommand } =
+  const { command, setCommand, setOutput, output, handleCommand, inputRef } =
     useCMDContext();
-  const inputRef = useRef(null);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -21,16 +19,41 @@ const AboutMe = () => {
       }
     };
 
-    window.addEventListener("keyDown", handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [setCommand, setOutput]);
 
   return (
     <div className="main-about">
       <div className="canvas-about">{/* Canvas here */}</div>
-      <div className="canvas-content">
-        <p>console.log(yash)</p>
-        <div className="about-cmd" onClick={() => inputRef.current?.focus()}>
+      <motion.div
+        className="canvas-content"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // Trigger when 20% visible
+        transition={{ staggerChildren: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {},
+        }}
+      >
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          console.log(yash)
+        </motion.p>
+
+        <motion.div
+          className="about-cmd"
+          onClick={() => inputRef.current?.focus()}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <div className="about-cmd-header">
             <span className="red"></span>
             <span className="yellow"></span>
@@ -55,18 +78,34 @@ const AboutMe = () => {
               ))}
             </div>
           </div>
-        </div>
-        <div className="about-btns">
-          <button
+        </motion.div>
+
+        <motion.div
+          className="about-btns"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2, delayChildren: 0.3 }}
+          variants={{
+            hidden: {},
+            visible: {},
+          }}
+        >
+          <motion.button
             className="about-github-btn"
             onClick={() =>
               window.open("https://github.com/yashmali02", "_blank")
             }
+            initial={{ x: -30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
           >
             <FaGithub />
             &nbsp;Github
-          </button>
-          <button
+          </motion.button>
+
+          <motion.button
             className="about-linkedIn-btn"
             onClick={() =>
               window.open(
@@ -74,15 +113,26 @@ const AboutMe = () => {
                 "_blank"
               )
             }
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
           >
             <FaLinkedin />
-            &nbsp;LinkedIN 
-          </button>
-        </div>
-        <div className="about-icons">
-          <LogoSlider/>
-        </div>
-      </div>
+            &nbsp;LinkedIN
+          </motion.button>
+        </motion.div>
+
+        <motion.div
+          className="about-icons"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <LogoSlider />
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

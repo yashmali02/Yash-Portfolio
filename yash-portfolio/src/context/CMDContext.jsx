@@ -1,11 +1,12 @@
 // CMDContext.js
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useRef } from "react";
 
 const CMDContext = createContext();
 
 export const CMDProvider = ({ children }) => {
   const [command, setCommand] = useState("");
   const [output, setOutput] = useState("");
+  const inputRef = useRef(null);
 
   const handleCommand = async (e) => {
     if (e.key !== "Enter") return;
@@ -130,7 +131,9 @@ export const CMDProvider = ({ children }) => {
   };
 
   return (
-    <CMDContext.Provider value={{ command, setCommand, output, handleCommand }}>
+    <CMDContext.Provider
+      value={{ command, setCommand, output, handleCommand, inputRef }}
+    >
       {children}
     </CMDContext.Provider>
   );

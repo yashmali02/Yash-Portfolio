@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AboutMe from "./pages/AboutMe/AboutMe";
 
 import { CMDProvider } from "./context/CMDContext";
+import Projects from "./pages/Projects/Projects";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Navbar />
         {/* <LandingPage /> */}
         <AboutMe />
+        <Projects/>
       </div>
     </CMDProvider>
   );

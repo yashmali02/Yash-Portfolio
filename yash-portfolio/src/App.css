@@ -7,6 +7,4 @@
   position: absolute;
   inset: 0;
   height: 100%;
-  background-image: radial-gradient(rgba(138, 138, 138, 0.3) 1px, transparent 1px);
-  background-size: 16px 16px;
 }
